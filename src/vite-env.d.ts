@@ -6,7 +6,7 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': 'http://localhost:5000', // Proxy API requests to backend
+      '/api': 'https://decision-app-1ds2.onrender.com/', // Proxy API requests to backend
     },
   },
 });
