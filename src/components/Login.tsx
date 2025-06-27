@@ -1,3 +1,5 @@
+/// <reference types="vite/client" />
+
 import React, { useState } from 'react';
 
 const Login: React.FC<{ onSwitchToRegister: () => void; onLoginSuccess: () => void }> = ({ onSwitchToRegister, onLoginSuccess }) => {
@@ -11,7 +13,8 @@ const Login: React.FC<{ onSwitchToRegister: () => void; onLoginSuccess: () => vo
     setLoading(true);
     setMessage('');
     try {
-      const res = await fetch('/api/auth/login', {
+      const API_URL = import.meta.env.VITE_API_URL;
+      const res = await fetch(`${API_URL}/api/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
