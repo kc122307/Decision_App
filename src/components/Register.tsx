@@ -21,7 +21,7 @@ const Register: React.FC<{ onSwitchToLogin: () => void }> = ({ onSwitchToLogin }
       });
       const data = await res.json();
       if (res.ok) {
-        setMessage('Registration successful! Please check your email to verify your account.');
+        setMessage('Registration successful! ');
       } else {
         setMessage(data.msg || 'Registration failed');
       }
